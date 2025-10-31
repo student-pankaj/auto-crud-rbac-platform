@@ -36,3 +36,33 @@ if (process.env.DATABASE_URL) {
     define: {
       timestamps: true,
       underscored: true,
+    },
+  });
+}
+
+const initializeDatabase = async () => {
+  try {
+    await sequelize.authenticate();
+    console.log('Database connection established successfully.');
+    
+    // Import models in the correct order (User first, then ModelDefinition)
+    const User = require('../models/User');
+    const ModelDefinition = require('../models/ModelDefinition');
+    
+    // Sync models in order - User first, then ModelDefinition
+    await User.sync({ force: false });
+    await ModelDefinition.sync({ force: false });
+    
+    console.log('Database synchronized successfully.');
+    
+    return sequelize;
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+    throw error;
+  }
+};
+
+module.exports = {
+  sequelize,
+  initializeDatabase,
+};

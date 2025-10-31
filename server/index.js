@@ -52,4 +52,16 @@ const startServer = async () => {
     console.log('Database initialized successfully');
     
     app.listen(PORT, '0.0.0.0', () => {
-      console.log(`Server running on port
+      console.log(`Server running on port ${PORT}`);
+      console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+      console.log(`Health check: http://0.0.0.0:${PORT}/api/health`);
+    });
+  } catch (error) {
+    console.error('Failed to start server:', error);
+    process.exit(1);
+  }
+};
+
+startServer();
+
+module.exports = app;
