@@ -1,0 +1,35 @@
+{
+  "fields": [
+    {
+      "name": "pankaj",
+      "type": "string",
+      "required": true,
+      "default": "",
+      "unique": false
+    },
+    {
+      "name": "Pankaj SolANKI",
+      "type": "string",
+      "required": false,
+      "default": "",
+      "unique": false
+    }
+  ],
+  "ownerField": "",
+  "rbac": {
+    "Admin": [
+      "all"
+    ],
+    "Manager": [
+      "create",
+      "read",
+      "update"
+    ],
+    "Viewer": [
+      "read"
+    ]
+  },
+  "name": "Testing",
+  "tableName": "Basic Info",
+  "publishedAt": "2025-10-31T17:26:31.230Z"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Product",
+  "tableName": "products",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string",
+      "required": true,
+      "default": "",
+      "unique": false
+    },
+    {
+      "name": "price",
+      "type": "number",
+      "required": true,
+      "default": 0,
+      "unique": false
+    },
+    {
+      "name": "description",
+      "type": "text",
+      "required": false,
+      "default": "",
+      "unique": false
+    },
+    {
+      "name": "isActive",
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "unique": false
+    },
+    {
+      "name": "category",
+      "type": "string",
+      "required": false,
+      "default": "",
+      "unique": false
+    }
+  ],
+  "ownerField": "ownerId",
+  "rbac": {
+    "Admin": ["all"],
+    "Manager": ["create", "read", "update"],
+    "Viewer": ["read"]
+  },
+  "publishedAt": "2024-01-01T00:00:00.000Z"
+}

@@ -1,0 +1,27 @@
+{
+  "fields": [
+    {
+      "name": "SUDHARSAN",
+      "type": "string",
+      "required": true,
+      "default": "",
+      "unique": false
+    }
+  ],
+  "ownerField": "SUDHARSAN",
+  "rbac": {
+    "Admin": [
+      "create"
+    ],
+    "Manager": [
+      "read",
+      "update"
+    ],
+    "Viewer": [
+      "read"
+    ]
+  },
+  "name": "SUDHARSAN",
+  "tableName": "phone",
+  "publishedAt": "2025-10-31T17:27:32.600Z"
+}

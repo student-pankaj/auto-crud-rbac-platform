@@ -1,0 +1,28 @@
+{
+  "fields": [
+    {
+      "name": "company_name",
+      "type": "string",
+      "required": false,
+      "default": "du buddy",
+      "unique": false
+    }
+  ],
+  "ownerField": "pankaj",
+  "rbac": {
+    "Admin": [],
+    "Manager": [
+      "create",
+      "read",
+      "update"
+    ],
+    "Viewer": [
+      "read",
+      "create",
+      "all"
+    ]
+  },
+  "name": "Duo buddy",
+  "tableName": "buddy",
+  "publishedAt": "2025-10-31T17:30:57.543Z"
+}
