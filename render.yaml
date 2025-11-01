@@ -1,10 +1,14 @@
 services:
   - type: web
     name: auto-crud-backend
-    runtime: node
+    runtime: node  # Node version automatically detected from .nvmrc (Node 20) or package.json engines
     plan: starter
-    buildCommand: cd server && npm install
-    startCommand: cd server && npm start
+    # Region: Choose during deployment in Render Dashboard (see comments below)
+    # Available regions: Oregon (US West), Ohio (US Central), Virginia (US East), Frankfurt (EU), Singapore (Asia)
+    # Note: Region must be selected in Dashboard - cannot be specified in render.yaml
+    # Root Directory: Set to "server" in Render Dashboard for monorepo (prevents client changes from triggering redeploys)
+    buildCommand: npm install
+    startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
