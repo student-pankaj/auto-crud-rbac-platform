@@ -8,10 +8,12 @@
     "npm": ">=9.0.0"
   },
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "jest"
-  },
+  "start": "node index.js",
+  "dev": "nodemon index.js",
+  "test": "jest",
+  "postinstall": "npm rebuild sqlite3 --build-from-source"
+}
+,
   "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",
